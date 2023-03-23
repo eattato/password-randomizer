@@ -172,7 +172,7 @@ $().ready(() => {
       }
 
       // 글자 자르기
-      pw = pw.substring(0, length + 1);
+      pw = pw.substring(0, length);
 
       output.val(pw);
     }
