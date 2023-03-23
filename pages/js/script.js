@@ -171,6 +171,9 @@ $().ready(() => {
         pw = swapStr(pw, swap[0], swap[1]);
       }
 
+      // 글자 자르기
+      pw = pw.substring(0, length + 1);
+
       output.val(pw);
     }
   });
