@@ -69,18 +69,19 @@ $().ready(() => {
   let sumbit = $("#submit");
 
   let config = {
-    pw: "",
+    // pw: "",
     len: 12,
     special: "~!@#$%^&*",
   };
 
   const save = (data) => {
+    data["data"] = true;
     chrome.storage.local.set(data);
   };
 
-  chrome.storage.local.get(["pw", "len", "special"]).then((res) => {
+  chrome.storage.local.get(["data", "pw", "len", "special"]).then((res) => {
     let data = config;
-    if (res.pw != null) {
+    if (res.data != null) {
       data = res;
     } else {
       save(config);
@@ -136,7 +137,7 @@ $().ready(() => {
       // 입력값 저장
       let data = {};
       for (let key in inputs) {
-        if (key != "url") {
+        if (key != "url" && key != "pw") {
           data[key] = inputs[key].val();
         }
       }
