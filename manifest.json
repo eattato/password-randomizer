@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "랜덤 비밀번호 생성기",
+  "description": "하나의 비밀번호로 사이트마다 다른 비밀번호를 만들어냅니다.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": "resources/icon.png"
+  },
+  "permissions": ["storage", "tabs"]
+}
