@@ -100,7 +100,7 @@ $().ready(() => {
 
       if (key != "special") {
         let inputSave = input.val();
-        input.change(() => {
+        input.on("input", () => {
           let numError = input.hasClass("num") && isNaN(input.val());
           if (input.val().length == 0 || numError) {
             input.addClass("error");
@@ -110,7 +110,12 @@ $().ready(() => {
           }
 
           if (numError) {
-            input.val(inputSave);
+            if (input.val().length == 0) {
+              inputSave = "0";
+              input.val("0");
+            } else {
+              input.val(inputSave);
+            }
           }
         });
       }
